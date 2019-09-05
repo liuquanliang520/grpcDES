@@ -61,14 +61,12 @@ export class GRPCHelper {
     } else if (type === 'static') {
       resolver = new StaticResolver();
     } else if (type === 'etcdv3') {
-      console.log(type);
       resolver = new EtcdV3Resolver();
     } else {
       throw new GRPCHelperError(`resolver not implemented: ${type}`);
     }
 
     this.lb = new RoundRobinBalancer(resolver, clientCreator);
-    console.log(addr, 'addr')
     this.lb.start(addr);
 
     const methodNames = clientCreator.getMethodNames();

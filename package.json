@@ -1,5 +1,5 @@
 {
-  "name": "grpcDES",
+  "name": "grpcdes",
   "version": "1.0.0",
   "description": "gRPC helper, an improved gRPC client for grpc-node",
   "main": "dist/src/index.js",
